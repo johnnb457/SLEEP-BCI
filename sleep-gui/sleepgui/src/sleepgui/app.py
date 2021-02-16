@@ -46,7 +46,7 @@ class SleepGUI(toga.App):
         self.main_window.show()
         
     def say_time(self, widget):
-        print("Latest wakeup time", self.time_inputMax.value, "time interval", self.time_inputInterval)
+        print("Latest wakeup time", self.time_inputMax.value, "time interval", self.time_inputInterval.value)
 
 
 def main():
