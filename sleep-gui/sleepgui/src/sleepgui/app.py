@@ -19,7 +19,7 @@ class SleepGUI(toga.App):
         """
         main_box = toga.Box(style=Pack(direction=COLUMN, background_color= rgb(204, 204, 255) ))
         
-                time_label = toga.Label(
+        time_label = toga.Label(
         'Enter the latest possible time you want to wake up at & choose the size of the interval to be woken up within: ',
         style=Pack(padding=(0, 5))
         )
