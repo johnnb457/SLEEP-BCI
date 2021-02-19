@@ -1,4 +1,4 @@
-#!/Users/angelakan/sleep-gui/beeware-venv/bin/python3
+#!/Users/angelakan/Desktop/GitHub/SLEEP-BCI/sleep-gui/beeware-venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

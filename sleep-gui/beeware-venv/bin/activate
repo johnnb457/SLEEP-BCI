@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/Users/angelakan/sleep-gui/beeware-venv"
+VIRTUAL_ENV="/Users/angelakan/Desktop/GitHub/SLEEP-BCI/sleep-gui/beeware-venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
