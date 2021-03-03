@@ -1,0 +1,49 @@
+[tool.briefcase]
+project_name = "SleepWave"
+bundle = "com.example"
+version = "0.0.1"
+url = "https://example.com/sleepwave"
+license = "BSD license"
+author = 'Angela Kan'
+author_email = "angelakan2002@gmail.com"
+
+[tool.briefcase.app.sleepwave]
+formal_name = "SleepWave"
+description = "My first application"
+icon = "src/sleepwave/resources/sleepwave"
+sources = ['src/sleepwave']
+requires = []
+
+
+[tool.briefcase.app.sleepwave.macOS]
+requires = [
+    'toga-cocoa>=0.3.0.dev20',
+]
+
+[tool.briefcase.app.sleepwave.linux]
+requires = [
+    'toga-gtk>=0.3.0.dev20',
+]
+system_requires = [
+    'libgirepository1.0-dev',
+    'libcairo2-dev',
+    'libpango1.0-dev',
+    'libwebkitgtk-3.0-0',
+    'gir1.2-webkit-3.0',
+]
+
+[tool.briefcase.app.sleepwave.windows]
+requires = [
+    'toga-winforms>=0.3.0.dev20',
+]
+
+# Mobile deployments
+[tool.briefcase.app.sleepwave.iOS]
+requires = [
+    'toga-iOS>=0.3.0.dev20',
+]
+
+[tool.briefcase.app.sleepwave.android]
+requires = [
+    'toga-android>=0.3.0.dev20',
+]
