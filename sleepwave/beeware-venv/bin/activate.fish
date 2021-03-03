@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/Users/angelakan/sleepwave/beeware-venv"
+set -gx VIRTUAL_ENV "/Users/angelakan/Desktop/GitHub/SLEEP-BCI/sleepwave/beeware-venv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
