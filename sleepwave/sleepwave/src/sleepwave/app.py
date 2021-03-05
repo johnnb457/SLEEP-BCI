@@ -70,7 +70,7 @@ class HelloWorld(toga.App):
         soundA.play(loops=-1)
         
     def check_time(self, time_inputHour, time_inputMin):
-        if time_inputAmPm.value == 'pm':
+        if self.time_inputAmPm == 'pm':
             time_inputHour += 12
         if time_inputHour.value == datetime.datetime.now().hour and time_inputMin.value == datetime.datetime.now().minute:
             self.play_sound(loops=-1)
