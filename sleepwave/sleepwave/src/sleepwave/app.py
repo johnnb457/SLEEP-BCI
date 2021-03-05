@@ -33,7 +33,8 @@ class HelloWorld(toga.App):
         
         buttonEnter = toga.Button( # button to enter the user inputs related to time
             'enter',
-            on_press=self.say_time, # when enter is pressed, desired wakeup time printed in terminal
+            #on_press=self.say_time, # when enter is pressed, desired wakeup time printed in terminal
+            on_press=self.check_time, # when enter is pressed, keep checking time until it equals input time and then sound alarm
             style=Pack(padding=5)
         )
         buttonSound = toga.Button( # button to test the alarm sound, will later be triggered by when actual time = optimal wakeup time
@@ -59,7 +60,7 @@ class HelloWorld(toga.App):
 
     def say_time(self, widget):
 #        int(time_inputHour.value)
-#        while time_inputHour.value < 1 or time_inputHour > 12:
+#        while time_inputHour.value < 1 or time_inputHour.value > 12:
 #            warning_hour = toga.Label('Please enter a valid hour between 1 and 12.', style=Pack(padding=(0,5)))
         print("Latest wakeup time: ", self.time_inputHour.value, ":", self.time_inputMin.value, "Time interval: ", self.time_inputInterval.value)
             
@@ -69,11 +70,16 @@ class HelloWorld(toga.App):
         soundA= pygame.mixer.Sound("alarm-normal-sound.wav") # set soundA to be the .wav file stored in sleepwave folder
         soundA.play(loops=-1) # play the alarm sound infinitely
         
-    def check_time(self, time_inputHour, time_inputMin):
-        if time_inputAmPm.value == 'pm': # add 12 to wake up time inputs set to be pm since daytime is 24 hr time
-            time_inputHour += 12
-        if time_inputHour.value == datetime.datetime.now().hour and time_inputMin.value == datetime.datetime.now().minute:
-            self.play_sound(loops=-1)
+    def check_time(self, widget):
+        if self.time_inputAmPm.value == 'pm': # add 12 to wake up time inputs set to be pm since daytime is 24 hr time
+            self.time_inputHour.value += 12
+            print(self.time_inputAmPm.value)
+            self.say_time
+        while (1==1):
+            if self.time_inputHour.value == datetime.datetime.now().hour and self.time_inputMin.value == datetime.datetime.now().minute:
+                #self.play_sound(loops=-1)
+                print(self.time_inputAmPm.value)
+                break
 
     def stop_alarm(self, widget): # called by the stop button
         pygame.mixer.stop() # stops the alarm sound
